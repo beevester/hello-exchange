@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/rates', [\App\Http\Controllers\ExchangeRateController::class, 'getRates']);
+Route::post('/exchange-rates', [\App\Http\Controllers\ExchangeRateController::class, 'exchangeRate']);
